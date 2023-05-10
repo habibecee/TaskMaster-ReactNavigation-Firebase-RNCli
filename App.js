@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import firestore from '@react-native-firebase/firestore';
+import firebase from '@react-native-firebase/app';
 import {
   ActivityIndicator,
   SafeAreaView,
@@ -6,7 +8,19 @@ import {
   Text,
   View,
 } from 'react-native';
-import firestore from '@react-native-firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDKKdgIngQZpjysUtKFNtrN-IXXDL1XONA',
+  authDomain: 'todo-app-97b27.firebaseapp.com',
+  projectId: 'todo-app-97b27',
+  storageBucket: 'todo-app-97b27.appspot.com',
+  messagingSenderId: '777519420303',
+  appId: '1:777519420303:web:13d4a8b4f9aa271c4bf1fa',
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 function App() {
   const [todos, setTodos] = useState(null);
