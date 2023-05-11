@@ -1,11 +1,17 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import {Button, SafeAreaView, Text, View} from 'react-native';
+import Header from '../companents/Header/Header';
 
-const HomeScreen = props => {
+const HomeScreen = ({navigation, route}) => {
   return (
     <SafeAreaView>
+      <Header title={'Anasayfa'} />
       <View>
         <Text>Home Screen</Text>
+        <Button
+          title="Kategorileri Gör"
+          onPress={() => navigation.navigate('Categories')}
+        />
       </View>
     </SafeAreaView>
   );
