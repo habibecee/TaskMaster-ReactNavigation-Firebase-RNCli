@@ -1,9 +1,12 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app';
+import firestore from '@react-native-firebase/firestore';
+import firebase from '@react-native-firebase/app';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDKKdgIngQZpjysUtKFNtrN-IXXDL1XONA',
   authDomain: 'todo-app-97b27.firebaseapp.com',
@@ -14,4 +17,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
