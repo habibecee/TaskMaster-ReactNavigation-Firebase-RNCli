@@ -11,7 +11,16 @@ const HomeScreen = ({navigation, route}) => {
         <Button
           title="Ürün Detay Gör"
           onPress={() =>
-            navigation.navigate('ProductsStack', {screen: 'ProductDetail'})
+            navigation.navigate('ProductsStack', {
+              screen: 'ProductDetail',
+              params: {id: '1'},
+            })
+          }
+        />
+        <Button
+          title="Profil Detay"
+          onPress={() =>
+            navigation.navigate('ProfileStack', {screen: 'ChangePassword'})
           }
         />
       </View>

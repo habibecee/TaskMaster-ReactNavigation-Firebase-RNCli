@@ -69,7 +69,7 @@ function BottomTab() {
             <Text
               style={{
                 fontSize: focused ? 16 : 14,
-                color: focused ? 'red' : 'gray',
+                color: focused ? 'orange' : 'pink',
               }}>
               Profil
             </Text>
@@ -78,7 +78,7 @@ function BottomTab() {
             <Icon
               name={focused ? 'person-circle' : 'person-circle-outline'}
               size={focused ? 24 : 20}
-              color={focused ? 'red' : 'gray'}
+              color={focused ? 'orange' : 'pink'}
             />
           ),
         }}
