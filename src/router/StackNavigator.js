@@ -8,10 +8,27 @@ const Stack = createStackNavigator();
 
 const StackNavigator = props => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="HomeStack" component={HomeStackScreen} />
-      <Stack.Screen name="CategoriesStack" component={CategoriesStackScreen} />
-      <Stack.Screen name="ProfileStack" component={ProfileStackScreen} />
+    <Stack.Navigator
+      initialRouteName="HomeStack"
+      screenOptions={{
+        headerStyle: {backgroundColor: '#f4511e'},
+        headerTintColor: '#fff',
+      }}>
+      <Stack.Screen
+        name="HomeStack"
+        component={HomeStackScreen}
+        options={{title: 'Anasayfa'}}
+      />
+      <Stack.Screen
+        name="CategoriesStack"
+        component={CategoriesStackScreen}
+        options={{title: 'Kategoriler'}}
+      />
+      <Stack.Screen
+        name="ProfileStack"
+        component={ProfileStackScreen}
+        options={{title: 'Profil'}}
+      />
     </Stack.Navigator>
   );
 };
