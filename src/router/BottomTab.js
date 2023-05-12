@@ -1,9 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text} from 'react-native';
-import HomeScreen from '../screens/HomeScreen';
-import CategoriesScreen from '../screens/CategoriesScreen';
+import HomeScreen from '../screens/TabScreens/HomeScreen';
+import CategoriesScreen from '../screens/TabScreens/CategoriesScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,8 +60,30 @@ function BottomTab() {
             />
           ),
         }}
-        name="Categories"
+        name="ProductsStack"
         component={CategoriesScreen}
+      />
+      <Tab.Screen
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text
+              style={{
+                fontSize: focused ? 16 : 14,
+                color: focused ? 'red' : 'gray',
+              }}>
+              Profil
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name={focused ? 'person-circle' : 'person-circle-outline'}
+              size={focused ? 24 : 20}
+              color={focused ? 'red' : 'gray'}
+            />
+          ),
+        }}
+        name="ProfileStack"
+        component={ProfileStack}
       />
     </Tab.Navigator>
   );
